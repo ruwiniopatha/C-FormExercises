@@ -45,75 +45,7 @@ namespace Form1
                 dataGridView1.DataSource = dt;
             }
            
-            /*
-            conn.Open();
-            ArrayList rowList = new ArrayList();
-            DataTable sTable;   
-           // OracleDataReader reader = cmd.ExecuteReader();
-            using (var readerl = cmd.ExecuteScalar())
-            {
-                if (readerl.Read())
-                 {
-
-                     object[] values = new object[readerl.FieldCount];
-                      readerl.GetValues(values);
-                rowList.Add(values);
-                   }
-            
-            }
-
-            OracleDataAdapter adapter = new OracleDataAdapter(cmd);
-
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            */
-
-            /*
-            while (reader.Read())
-            {
-                object[] values = new object[reader.FieldCount];
-                reader.GetValues(values);
-                rowList.Add(values);
-
-            }
-            DataTable schema = reader.GetSchemaTable();
-            *//*
-            foreach (object[] row in rowList)
-            {
-                // Create a string array large enough to hold all
-                // the column values in this array
-                string[] orderDetails = new string[row.Length];
-
-                // Create a column index into the array
-                int columnIndex = 0;
-
-                // Now process each column value
-                foreach (object column in row)
-                {
-                    // Convert the value to a string and stick
-                    // it in the string array
-                    orderDetails[columnIndex++] = Convert.ToString(column);
-                }
-
-                // Now use the string array to create a new item
-                // to go in the list view
-                //dataGridView1.
-                ListViewItem newItem = new ListViewItem(orderDetails);
-
-                // Finally add the new item to the view
-                listView1.Items.Add(newItem);
-            }
-
-            using (var adapter = new OracleDataAdapter(cmd))
-            {
-                //conn.Open();
-                var myTable = new DataTable();
-                adapter.Fill(myTable);
-                dataGridView1.DataSource = myTable;
-            }
-            //reader.Close();
-            //conn.Close();
-           */
+           
         }
             
 
