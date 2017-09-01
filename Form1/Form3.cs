@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using System.IO;
+
 namespace Form1
 {
     public partial class Form3 : Form
@@ -70,6 +72,26 @@ namespace Form1
         private void Form3_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var FD = new System.Windows.Forms.OpenFileDialog();
+            if (FD.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string fileToOpen = FD.FileName;
+                Console.WriteLine(fileToOpen);
+                Image image = Image.FromFile(fileToOpen);
+                //this.pictureBox1.Image = image;
+                pictureBox1.BackgroundImage= image; 
+
+                System.IO.FileInfo File = new System.IO.FileInfo(FD.FileName);
+
+                //OR
+
+                System.IO.StreamReader reader = new System.IO.StreamReader(fileToOpen);
+                //etc
+            }
         }
 
     
