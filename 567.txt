@@ -1,2 +1,6 @@
 The newly added file
+<<<<<<< HEAD
 some things added in master
+=======
+Something more
+>>>>>>> opsz
