@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.EMPNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ENAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,18 +41,29 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 12);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EMPNO,
+            this.ENAME,
+            this.SSN});
+            this.dataGridView1.Location = new System.Drawing.Point(32, 178);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(194, 151);
+            this.dataGridView1.Size = new System.Drawing.Size(408, 209);
             this.dataGridView1.TabIndex = 0;
             // 
-            // listView1
+            // EMPNO
             // 
-            this.listView1.Location = new System.Drawing.Point(292, 129);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.EMPNO.HeaderText = "EMPNO";
+            this.EMPNO.Name = "EMPNO";
+            // 
+            // ENAME
+            // 
+            this.ENAME.HeaderText = "ENAME";
+            this.ENAME.Name = "ENAME";
+            // 
+            // SSN
+            // 
+            this.SSN.HeaderText = "SSN";
+            this.SSN.Name = "SSN";
             // 
             // Form5
             // 
@@ -59,7 +72,6 @@
             this.BackgroundImage = global::Form1.Properties.Resources.windows_10_backgrounds_050551114_263;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(577, 458);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form5";
             this.Text = "Form5";
@@ -72,6 +84,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMPNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ENAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SSN;
     }
 }
