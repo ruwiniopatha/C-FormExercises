@@ -38,6 +38,19 @@ namespace Form1
            
            
         }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            int rowindex = dataGridView1.CurrentCell.RowIndex;
+            int columnindex = dataGridView1.CurrentCell.ColumnIndex; 
+
+            
+
+                string a = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
+                label1.Text = a;
+
+            
+        }
             
 
         /*
