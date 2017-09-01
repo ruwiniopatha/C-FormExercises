@@ -13,6 +13,7 @@ namespace Form1
 {
     public partial class Form2 : Form
     {
+        Validation validInstanstance = new Validation();
         public Form2()
         {
             InitializeComponent();
@@ -30,7 +31,11 @@ namespace Form1
             //OracleParameter countpp;
             int count = 0 ;
             string username = textBox1.Text;
-            int userpass = Convert.ToInt32(textBox2.Text);
+            
+            if(validInstanstance.validate_as_letters(username)&&validInstanstance.validate_as_numbers(textBox2.Text.ToString())
+                &&validInstanstance.check_values_are_null(username)&& validInstanstance.check_values_are_null(textBox2.Text.ToString()))
+            {
+                int userpass = Convert.ToInt32(textBox2.Text);
             string oradb = "Data Source=cmbtrndb02/app8sp2;User Id=ifsapp;Password=ifsapp;";
             OracleConnection conn = new OracleConnection(oradb);  // C#
             conn.Open();
@@ -80,6 +85,11 @@ namespace Form1
                 MessageBox.Show("Wrong credentials!", "My Application", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
                 textBox1.Text = "";
                 textBox2.Text = "";
+            }
+            }
+            else
+            {
+             MessageBox.Show("Please check the validation rules and enter the values again !!", "My Application", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
             }
 
         }
